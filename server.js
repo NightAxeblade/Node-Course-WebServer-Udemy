@@ -27,16 +27,6 @@ hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
 })
 
-app.get('/', (req, res) => {
-  // res.send('<h1>Hello Express!</h1>');
-  res.send({
-    name: 'Andre',
-    likes: [
-      'Biking',
-      'Cities'
-    ]
-  });
-});
 
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
@@ -45,10 +35,17 @@ app.get('/about', (req, res) => {
   });
 });
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home.hbs', {
         pageTitle: 'Home',
         place: 'Hawaii' 
+    });
+  });
+
+app.get('/project', (req, res) => {
+    res.render('project.hbs', {
+        pageTitle: 'Project',
+        place: 'Bali' 
     });
   });
 
